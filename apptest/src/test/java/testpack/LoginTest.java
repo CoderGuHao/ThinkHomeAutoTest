@@ -1,5 +1,6 @@
 package testpack;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
@@ -11,9 +12,8 @@ public class LoginTest {
 
         AndroidDriver driver = DriverInit.getInstance();
 
-//        TouchAction action = new TouchAction(driver).press(75,100).moveTo(75,500);
-//        action.perform().release();
-//        action.perform().release();
+        TouchAction action = new TouchAction(driver);
+        action.press(100,50).moveTo(100,350).perform().release();
 
         /*隐式等待，不然查找不到元素直接报错*/
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
